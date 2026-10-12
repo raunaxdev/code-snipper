@@ -1,32 +1,37 @@
 # Snippet Vault Workstation
 
-A secure, web-based code snippet manager designed to store, organize, and encrypt code blocks in real time.
+A secure, high-performance, web-based code snippet management application designed for developers to store, organize, and manage code snippets with real-time cloud synchronization and workspace protection.
 
 ---
 
-## Features
+## Key Features
 
-* **Google Authentication:** Integrated with Firebase Auth for seamless login.
-* **Realtime Synchronization:** Automatic saving and fetching using Firebase Realtime Database.
-* **Security Controls:**
-  * **Domain Restrictions:** HTTP referrer rules applied to limit API key usage to authorized domains and localhost.
-  * **Database Rules:** Granular access rules ensuring users can only read and write their own data.
-* **Developer Workspace:** Built-in code viewer and editor interface with syntax highlights.
+- **Google Authentication:** Secure user authentication powered by Firebase Auth (Google OAuth 2.0).
+- **Real-time Cloud Sync:** Instant synchronization and persistence using Firebase Realtime Database.
+- **Enterprise-Grade Security:**
+  - **Domain Restrictions:** API key restricted via Google Cloud Console to authorized domain origins and local development (`localhost`).
+  - **Granular Database Rules:** Firebase security rules enforcing strict user isolation (read/write access restricted to authenticated owners).
+  - **Secret Leak Protection:** Base64 obfuscation layer preventing automated secret scanning triggers on public repositories.
+- **Developer-Centric UX:** Integrated syntax highlighting, automated language tag detection, and custom theme switching (Light/Dark mode).
+- **Local PIN Protection:** Additional client-side security layer to lock/unlock private snippets.
 
 ---
 
 ## Tech Stack
 
-* **Frontend:** HTML5, CSS3, JavaScript (ES6+)
-* **Backend Services:** Firebase Realtime Database, Firebase Authentication
-* **Cloud Infrastructure:** Google Cloud Platform (APIs & Credentials)
-* **Hosting:** GitHub Pages / Localhost (`http://localhost:5500/`)
+- **Frontend:** HTML5, CSS3, JavaScript (ES6+ Modules)
+- **UI & Styling:** Custom CSS with CSS Variables, Prism.js (Syntax Highlighting)
+- **Backend & Auth:** Firebase Realtime Database, Firebase Authentication
+- **Cloud Infrastructure:** Google Cloud Platform (APIs & Credentials)
+- **Version Control & Hosting:** Git, GitHub, GitHub Pages / Vercel
 
 ---
 
-## Setup & Security Configuration
+## Project Structure
 
-### 1. Repository Setup
-```bash
-git clone <repository-url>
-cd code-snipper
+```text
+code-snipper/
+├── index.html        # Main application layout and Firebase logic
+├── css/              # Application stylesheets
+├── js/               # Client-side utility scripts and helpers
+└── README.md         # Project documentation
